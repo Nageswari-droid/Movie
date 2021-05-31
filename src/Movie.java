@@ -29,8 +29,8 @@ public class Movie {
         return PGMovieList.toArray(new Movie[PGMovieList.size()]);
     }
 
-    public static void printMovies(Movie[] MovieArrayList) {
-        for (Movie movie : MovieArrayList) {
+    public static void printMovies(Movie[] MovieArray) {
+        for (Movie movie : MovieArray) {
 
             System.out.println(
                     "Title : " + movie.title + "\n" + "Studio : " + movie.studio + "\n" + "Rating : " + movie.rating
