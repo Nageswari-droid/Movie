@@ -17,18 +17,19 @@ public class Movie {
         this.rating = "PG";
     }
 
-    public static ArrayList<Movie> getPG(ArrayList<Movie> movieArrayList) {
+    public static Movie[] getPG(Movie[] movieArray) {
         ArrayList<Movie> PGMovieList = new ArrayList<>();
 
-        for (Movie movie : movieArrayList) {
+        for (Movie movie : movieArray) {
             if (movie.rating.contains("PG")) {
                 PGMovieList.add(movie);
             }
         }
-        return PGMovieList;
+
+        return PGMovieList.toArray(new Movie[PGMovieList.size()]);
     }
 
-    public static void printMovies(ArrayList<Movie> MovieArrayList) {
+    public static void printMovies(Movie[] MovieArrayList) {
         for (Movie movie : MovieArrayList) {
 
             System.out.println(
@@ -51,15 +52,9 @@ public class Movie {
 
         Movie movieFive = new Movie("Kung fu panda", "Dreamworks");
 
-        ArrayList<Movie> movieArray = new ArrayList<>(Arrays.asList(
-                movieOne,
-                movieTwo,
-                movieThree,
-                movieFour,
-                movieFive
-        ));
+        Movie[] movieArray = {movieOne, movieTwo, movieThree, movieFour, movieFive};
 
-        ArrayList<Movie> PGRatedMovies = getPG(movieArray);
+        Movie[] PGRatedMovies = getPG(movieArray);
         printMovies(PGRatedMovies);
     }
 }
